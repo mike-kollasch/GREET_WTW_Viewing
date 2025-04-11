@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GREET Well-to-Wake Calculator</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link href="https://cdn.jsdeliver.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-5 text-center bg-light"></div>
+            <h1 style="text-align:center">GREET Well-to-Wake Calculator Results</h1>
+            <p style="text-align:center"> Select a Fuel or Feedstock to see GHG values</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" .col-md-4>
+            <div class="card card-body bg-light">
+                <h2> Fuel or Feedstock:</h2>
+                <select id="selDataset" onchange="optionChanged(this.value)">
+                </select>
+            </div>
+            <div class="" card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">GHG Emissions</h3>
+                    <ul class="Emissions">
+                        <li class="WTP"> WTP: </li>
+                        <li class="PTW"> PTW: </li>
+                        <li class="WTW"> WTW: </li>
+                        <li class="UNITS"> units: </li>
+                    </ul>
+                </div>
+                <div id="feedstock_emissions" class="" card-body"></div>
+            </div>
+            <div class="col-md-8">
+                <div id="bar"></div>
+            </div>
+            <div class="col-md-5">
+                <div id="gauge"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="mx-auto"></div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./static/app1.js"></script>
+
+</body>
+
+</html>
