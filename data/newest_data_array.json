@@ -129,15 +129,15 @@
                 "units": "[g/MJ]"
             },
             "BC_Urban": {
-                "WTP": 2.97e-05,
-                "PTW": 1.02e-05,
-                "WTW": 3.99e-05,
+                "WTP": 2.9682e-05,
+                "PTW": 1.01068e-05,
+                "WTW": 3.98788e-05,
                 "units": "[g/MJ]"
             },
             "OC_Urban": {
-                "WTP": 4.45e-05,
-                "PTW": 7.41e-06,
-                "WTW": 5.19e-05,
+                "WTP": 4.45391e-05,
+                "PTW": 7.40547e-06,
+                "WTW": 5.19446e-05,
                 "units": "[g/MJ]"
             },
             "Total_Energy": {
