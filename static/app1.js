@@ -52,7 +52,7 @@ function makeBarChart(feedstock) {
             type: 'bar',
             name: 'WTP',
             orientation: 'h',
-            marker: { color: 'blue', width: 1 }
+            marker: { color: 'blue', width: 0.5 }
         };
         let trace2 = {
             x: [emiss_values.PTW],
@@ -60,7 +60,7 @@ function makeBarChart(feedstock) {
             type: 'bar',
             name: 'PTW',
             orientation: 'h',
-            marker: { color: 'red' ,width: 0.75}
+            marker: { color: 'red' ,width: 0.5}
         };
         let trace3 = {
             x: [emiss_values.WTW],

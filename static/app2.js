@@ -44,7 +44,7 @@ function makeBarChart(feedstock, metric) {
                 type: 'bar',
                 name: 'PTW',
                 orientation: 'h',
-                marker: { color: 'red', width: 0.75 }
+                marker: { color: 'red', width: 1 }
             };
             let trace3 = {
                 x: [emiss_values.WTW],
@@ -52,16 +52,16 @@ function makeBarChart(feedstock, metric) {
                 type: 'bar',
                 name: 'WTW',
                 orientation: 'h',
-                marker: { color: 'green', width: 0.5 }
+                marker: { color: 'green', width: 1 }
             };
 
             let plot = [trace3, trace2, trace1];
             let layout = {
                 title: 'Emissions for Selected Feedstock and Metric',
-                barmode: 'group',
-                xaxis: { title: 'see units above' },
+                barmode: 'overlay',
+                xaxis: { title: emiss_values.units },
                 yaxis: { title: 'Emissions by LCA Stage' },
-                width: 1000
+                width: 500
             };
 
             Plotly.newPlot('bar', plot, layout);
@@ -73,14 +73,14 @@ function makeBarChart(feedstock, metric) {
 // Populate dropdown menus and initialize the page
 function init() {
     d3.json("../data/newest_data_array.json").then(function (data) {
-        // Populate feedstock dropdown
+        // Populate feedstock dropdown from the list in the json file
         let feedstockDropdown = d3.select("#selFeedstock");
         let feedstocks = data.feedstocks;
         feedstocks.forEach(feedstock => {
             feedstockDropdown.append("option").text(feedstock).property("value", feedstock);
         });
 
-        // Populate metric dropdown
+        // Populate metric dropdown from the list in the json file
         let metricDropdown = d3.select("#selMetric");
         let metrics = data.metrics;
         metrics.forEach(metric => {
@@ -95,16 +95,17 @@ function init() {
     });
 }
 
-// Handle feedstock dropdown change
+// Handle feedstock dropdown change, called whenever a new feedstock is selected, returns the new feedstock value and the current metric value
+// and calls makePanel and makeBarChart with the new values
 function feedstockChanged(feedstock) {
-    let metric = d3.select("#selMetric").property("value"); // Get the current metric
+    let metric = d3.select("#selMetric").property("value"); // Get the current metric value
     makePanel(feedstock, metric);
     makeBarChart(feedstock, metric);
 }
 
 // Handle metric dropdown change
 function metricChanged(metric) {
-    let feedstock = d3.select("#selFeedstock").property("value"); // Get the current feedstock
+    let feedstock = d3.select("#selFeedstock").property("value"); // Get the current feedstock value
     makePanel(feedstock, metric);
     makeBarChart(feedstock, metric);
 }

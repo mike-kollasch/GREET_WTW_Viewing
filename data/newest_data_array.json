@@ -1061,79 +1061,79 @@
                 "WTW": 0.003677932,
                 "units": "[g/MJ]"
             },
-            "SOx: Total": {
+            "SOx": {
                 "WTP": 0.01904271,
                 "PTW": 0.0,
                 "WTW": 0.01904271,
                 "units": "[g/MJ]"
             },
-            "BC: Total": {
+            "BC": {
                 "WTP": 0.000560165,
                 "PTW": 7.272944e-05,
                 "WTW": 0.000632894,
                 "units": "[g/MJ]"
             },
-            "OC: Total": {
+            "OC": {
                 "WTP": 0.000709496,
                 "PTW": 6.990435e-05,
                 "WTW": 0.0007794,
                 "units": "[g/MJ]"
             },
-            "VOC: Urban": {
+            "VOC_Urban": {
                 "WTP": 0.00062229,
                 "PTW": 0.001430318,
                 "WTW": 0.002052608,
                 "units": "[g/MJ]"
             },
-            "CO: Urban": {
+            "CO_Urban": {
                 "WTP": 0.001422589,
                 "PTW": 0.004770564,
                 "WTW": 0.006193153,
                 "units": "[g/MJ]"
             },
-            "NOx: Urban": {
+            "NOx_Urban": {
                 "WTP": 0.002214256,
                 "PTW": 0.016243448,
                 "WTW": 0.018457704,
                 "units": "[g/MJ]"
             },
-            "PM10: Urban": {
+            "PM10_Urban": {
                 "WTP": 0.000147136,
                 "PTW": 5.79316e-06,
                 "WTW": 0.000152929,
                 "units": "[g/MJ]"
             },
-            "PM2.5: Urban": {
+            "PM2.5_Urban": {
                 "WTP": 0.000126938,
                 "PTW": 5.79316e-06,
                 "WTW": 0.000132731,
                 "units": "[g/MJ]"
             },
-            "SOx: Urban": {
+            "SOx_Urban": {
                 "WTP": 0.000683108,
                 "PTW": 0.0,
                 "WTW": 0.000683108,
                 "units": "[g/MJ]"
             },
-            "BC: Urban": {
+            "BC_Urban": {
                 "WTP": 1.08e-05,
                 "PTW": 2.07e-06,
                 "WTW": 1.29e-05,
                 "units": "[g/MJ]"
             },
-            "OC: Urban": {
+            "OC_Urban": {
                 "WTP": 0.0000319727037376088,
                 "PTW": 1.50622182672172e-06,
                 "WTW": 0.0000334789265643305,
                 "units": "[g/MJ]"
             },
-            "Total Energy": {
+            "Total_Energy": {
                 "WTP": 0.60743362,
                 "PTW": 1.0,
                 "WTW": 1.60743362,
                 "units": "[MJ/MJ]"
             },
-            "Fossil Energy": {
+            "Fossil_Energy": {
                 "WTP": 0.482700029,
                 "PTW": 0.0,
                 "WTW": 0.482700029,
@@ -1157,7 +1157,7 @@
                 "WTW": 0.044908143,
                 "units": "[MJ/MJ]"
             },
-            "Water Consumption": {
+            "Water_Consumption": {
                 "WTP": 0.020568162,
                 "PTW": 0.0,
                 "WTW": 0.020568162,
@@ -1202,25 +1202,25 @@
                 "WTW": 0.003782136,
                 "units": "[g/MJ]"
             },
-            "SOx: Total": {
+            "SOx": {
                 "WTP": 0.016949122,
                 "PTW": 0.0,
                 "WTW": 0.016949122,
                 "units": "[g/MJ]"
             },
-            "BC: Total": {
+            "BC": {
                 "WTP": 0.00089783,
                 "PTW": 7.272944e-05,
                 "WTW": 0.000970559,
                 "units": "[g/MJ]"
             },
-            "OC: Total": {
+            "OC": {
                 "WTP": 0.000752647,
                 "PTW": 6.990435e-05,
                 "WTW": 0.000822551,
                 "units": "[g/MJ]"
             },
-            "VOC: Urban": {
+            "VOC_Urban": {
                 "WTP": 0.000662817,
                 "PTW": 0.001430318,
                 "WTW": 0.002093135,
@@ -1250,31 +1250,31 @@
                 "WTW": 0.000130098,
                 "units": "[g/MJ]"
             },
-            "SOx: Urban": {
+            "SOx_Urban": {
                 "WTP": 0.000550549,
                 "PTW": 0.0,
                 "WTW": 0.000550549,
                 "units": "[g/MJ]"
             },
-            "BC: Urban": {
+            "BC_Urban": {
                 "WTP": 0.0000110137467173392,
                 "PTW": 2.07395159217837e-06,
                 "WTW": 0.0000130876983095176,
                 "units": "[g/MJ]"
             },
-            "OC: Urban": {
+            "OC_Urban": {
                 "WTP": 2.98818e-05,
                 "PTW": 1.506222e-06,
                 "WTW": 3.138802e-05,
                 "units": "[g/MJ]"
             },
-            "Total Energy": {
+            "Total_Energy": {
                 "WTP": 0.935046352,
                 "PTW": 1.0,
                 "WTW": 1.935046352,
                 "units": "[MJ/MJ]"
             },
-            "Fossil Energy": {
+            "Fossil_Energy": {
                 "WTP": 0.484615618,
                 "PTW": 0.0,
                 "WTW": 0.484615618,
@@ -1298,7 +1298,7 @@
                 "WTW": 0.063492118,
                 "units": "[MJ/MJ]"
             },
-            "Water Consumption": {
+            "Water_Consumption": {
                 "WTP": 0.019297187,
                 "PTW": 0.0,
                 "WTW": 0.019297187,
