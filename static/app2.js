@@ -48,7 +48,7 @@ function makeBarChart(feedstock, metric) {
             };
             let trace3 = {
                 x: [emiss_values.WTW],
-                y: ['WTW'],
+                y: ['WTW = WTP+PTW'],
                 type: 'bar',
                 name: 'WTW',
                 orientation: 'h',

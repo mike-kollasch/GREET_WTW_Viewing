@@ -11,25 +11,40 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.plot.ly/plotly-1.5.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 
 <body>
     <div class="row">
         <div class="col-md-12 p-5 text-center bg-light"></div>
         <h2 style="text-align:center">GREET Well-to-Wake Calculator Results</h2>
-        <p style="text-align:center"> Select a Fuel/Feedstock and Metric to see Values</p>
-    </div>
+        </div>
     <div class="row">
         <div class="col-md-6 mb-3">
             <div class="card card-body bg-light">
-                <h4>Fuel or Feedstock:</h4>
+                <h4>Select a Process/Feedstock:</h4>
                 <select id="selFeedstock" onchange="feedstockChanged(this.value)">
                 </select>
             </div>
         </div>
         <div class="col-md-6">
             <div class="card card-body bg-light">
-                <h4>Metric:</h4>
+                <h4>Select a Metric:</h4>
                 <select id="selMetric" onchange="metricChanged(this.value)">
                 </select>
             </div>
@@ -59,9 +74,101 @@
     </div>
     </div>
     </div>
+    <h2>Interactive Data Table</h2> <label for="metricSelect">Select a Metric to see Values:</label>
+    <select id="metricSelect">
+        <!-- Options will be populated dynamically -->
+    </select>
+
+    <table id="dataTable">
+        <thead>
+            <tr id="tableHeader">
+                <!-- Headers will be populated dynamically -->
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data will be populated dynamically -->
+        </tbody>
+    </table>
+
+    <!-- Include PapaParse library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const csvFilePath = './data/cleaned_data.csv';
+            const metricSelect = document.getElementById('metricSelect');
+            const tableHeader = document.getElementById('tableHeader');
+            const tableBody = document.getElementById('tableBody');
+
+            Papa.parse(csvFilePath, {
+                download: true,
+                header: true,
+                complete: function (results) {
+                    const data = results.data;
+                    const metrics = new Set();
+
+                    // Process each row to extract and clean the metric names
+                    for (let i = 0; i < data.length; i += 4) {
+                        let rawMetric = data[i].Metric_Stage; // Assuming 'Metric_Stage' is the column name
+                        let cleanedMetric = rawMetric.slice(0, -4); // Remove the last 4 characters
+                        metrics.add(cleanedMetric);
+                    }
+
+                    // Populate dropdown with cleaned metrics
+                    metrics.forEach(metric => {
+                        const option = document.createElement('option');
+                        option.value = metric;
+                        option.textContent = metric;
+                        metricSelect.appendChild(option);
+                    });
+
+                    // Populate table headers
+                    const headers = Object.keys(data[0]);
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        th.textContent = header;
+                        tableHeader.appendChild(th);
+                    });
+
+                    // Event listener for dropdown change
+                    metricSelect.addEventListener('change', function () {
+                        const selectedMetric = metricSelect.value;
+                        updateTable(data, selectedMetric);
+                    });
+
+                    // Initial table population
+                    if (metricSelect.options.length > 0) {
+                        updateTable(data, metricSelect.options[0].value);
+                    }
+                }
+            });
+
+            function updateTable(data, selectedMetric) {
+                tableBody.innerHTML = ''; // Clear existing table data
+
+                for (let i = 0; i < data.length; i++) {
+                    // Check if the Metric_Stage starts with the selected metric
+                    if (data[i].Metric_Stage.startsWith(selectedMetric)) {
+                        const row = document.createElement('tr');
+                        Object.values(data[i]).forEach(value => {
+                            const td = document.createElement('td');
+                            td.textContent = value;
+                            row.appendChild(td);
+                        });
+                        tableBody.appendChild(row);
+                    }
+                }
+            }
+        });
+    </script>
 
     <script src="./static/app2.js"></script>
 
+    <div class="row">
+        <div class="col-md-12 p-5 text-center bg-light"></div>
+        <p style="text-align:center"> Documentation for calculated values can be found at 
+            <a href="https://greet.anl.gov/" target="_blank">https://greet.anl.gov/</a>
+        </p>
+    </div>
 </body>
 
 </html>
