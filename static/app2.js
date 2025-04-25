@@ -2,7 +2,7 @@
 // and then creates a panel with the emissions data.
 
 function makePanel(feedstock, metric) {
-    d3.json("data/jet_emissions.json").then(function (data) {
+    d3.json("https://bluffermk.github.io/GREET_WTW_Viewing/data/jet_emissions.json").then(function (data) {
         let dataArray = data.emissions;
 
         // Filter data based on feedstock and metric
@@ -21,7 +21,7 @@ function makePanel(feedstock, metric) {
 };
 // Update the bar chart with data
 function makeBarChart(feedstock, metric) {
-    d3.json("https://bluffermk.github.io/GREET_WTW_Viewing/data/newest_data_array.json").then(function (data) {
+    d3.json("https://bluffermk.github.io/GREET_WTW_Viewing/data/jet_emissions.json").then(function (data) {
         let dataArray = data.emissions;
 
         // Filter data based on feedstock and metric
