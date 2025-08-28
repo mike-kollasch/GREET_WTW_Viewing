@@ -2,7 +2,7 @@
 // and then creates a panel with the emissions data.
 
 function makePanel(feedstock, metric) {
-    d3.json("https://bluffermk.github.io/GREET_WTW_Viewing/data/newest_data_array.json").then(function (data) {
+    d3.json("https://mike-kollasch.github.io/GREET_WTW_Viewing/data/newest_data_array.json").then(function (data) {
         let dataArray = data.emissions;
 
         // Filter data based on feedstock and metric
@@ -21,7 +21,7 @@ function makePanel(feedstock, metric) {
 };
 // Update the bar chart with data
 function makeBarChart(feedstock, metric) {
-    d3.json("https://bluffermk.github.io/GREET_WTW_Viewing/data/newest_data_array.json").then(function (data) {
+    d3.json("https://mike-kollasch.github.io/GREET_WTW_Viewing/data/newest_data_array.json").then(function (data) {
         let dataArray = data.emissions;
 
         // Filter data based on feedstock and metric
@@ -72,7 +72,7 @@ function makeBarChart(feedstock, metric) {
 };
 // Populate dropdown menus and initialize the page
 function init() {
-    d3.json("https://bluffermk.github.io/GREET_WTW_Viewing/data/newest_data_array.json").then(function (data) {
+    d3.json("https://mike-kollasch.github.io/GREET_WTW_Viewing/data/newest_data_array.json").then(function (data) {
         // Populate feedstock dropdown from the list in the json file
         let feedstockDropdown = d3.select("#selFeedstock");
         let feedstocks = data.feedstocks;
